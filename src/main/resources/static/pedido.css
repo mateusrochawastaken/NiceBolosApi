@@ -1,0 +1,134 @@
+.produto{
+    display: inline-block;
+    background-color: #1f0a0a;
+    position: relative;
+    vertical-align: top;
+    text-align: center  ;
+    height: 300px;
+    width: 170px;
+    border-radius: 20%;
+    margin-top: 1%;
+}
+#produtos{
+    vertical-align: top;
+    overflow-y: scroll;
+    width: 100vw;
+    height: 90vh;
+}
+.thumb{
+    width: 30%;
+    height: auto;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}
+.textoProduto{
+    color: white;
+    width: 100%;
+    font-size: xx-large;
+    margin: 0;
+}
+.descProduto{
+    display: inline-block;
+    position: relative;
+    top:20px;
+    color: white;
+    width: 90%;
+    height: 20%;
+    font-size:large;
+    margin: 0;
+}
+
+.qtdade{
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    display: inline-block;
+    width: 70%;
+    background-color: pink;
+    border-radius: 30%;
+    font-size: large;
+    word-spacing: 0.25rem;
+    overflow: hidden;
+}
+
+.operacao{
+    display: inline;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    border-radius: 20%;
+    font-size: xx-large;
+}
+.operacao:hover{
+    background-color:rgb(252, 157, 173);
+}
+
+.num{
+    display: inline;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+body{
+    overflow-x: hidden;
+    margin: 0px;
+    background-color: #ffffff;
+}
+label{
+    display: block;
+    font-size: x-large;
+}
+#tel{
+    font-size: 3vw;
+    width: 100%;
+}
+#enviar,#continuar{
+    position: absolute;
+    bottom: 1px;
+    display: block;
+    height: 4vh;
+    width: 200px;
+    font-size: x-large;
+    color: black;
+}
+
+#pedidoH1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    font-size: xxx-large;
+    margin-left: 10px;
+}
+
+#popup{
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    left: 15%;
+    bottom: 15%;
+    background-color: #dadada;
+    border-radius: 10%;
+    padding: 5%;
+    height: 70vh;
+    width: 70vw;
+}
+
+#fog{
+    display: none;
+    position: absolute;
+    top: 0px;
+    background-color: rgb(0 0 0 / 0.5);
+    height: 100vh;
+    width: 100vw;
+}
+#confirmacao{
+    font-size: x-large;
+}
+#fechar{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    background-color: red;
+    color: white;
+    border-style: none;
+    border-radius: 40%;
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration xmlns="https://logging.apache.org/xml/ns"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="
+                   https://logging.apache.org/xml/ns
+                   https://logging.apache.org/xml/ns/log4j-config-2.xsd">
+    <Appenders>
+        <Console name="CONSOLE">
+            <PatternLayout pattern="%level %style{*%c{1}:}{blue} %m%n"/>
+        </Console>
+        <Console name="TRACE">
+            <PatternLayout pattern="%style{%level *%c{1}:}{magenta} %m%n"/>
+        </Console>
+        <Console name="ERROR">
+            <PatternLayout pattern="%style{%level *%c{1}:}{red} %m%n"/>
+        </Console>
+        <Console name="FRAMEWORKS">
+            <PatternLayout pattern="%c %level %style{[%d{HH:mm:ss}] Framework:}{#aafaf2} %m%n"/>
+        </Console>
+
+        <Console name="SPRING">
+            <PatternLayout pattern="%level %style{[%d{HH:mm:ss}] Spring:}{#CAF75F} %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="FRAMEWORKS"/>
+        </Root>
+
+        <Logger name="org.nicebolos" level="TRACE" additivity="false">
+            <AppenderRef ref="CONSOLE" level="DEBUG">
+                <LevelMatchFilter level="ERROR" onMatch="DENY" onMismatch="ACCEPT"/>
+            </AppenderRef>
+            <AppenderRef ref="TRACE">
+                <LevelMatchFilter level="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+            </AppenderRef>
+            <AppenderRef ref="ERROR">
+                <LevelMatchFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            </AppenderRef>
+        </Logger>
+
+        <Logger name="org.springframework" level="WARN" additivity="false">
+            <AppenderRef ref="SPRING"/>
+        </Logger>
+    </Loggers>
+
+</Configuration>
