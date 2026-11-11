@@ -1,78 +1,50 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pedido.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" href="logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nice Bolos</title>
+    <link rel="stylesheet" href="cardapio.css">
+    <link rel="icon" href="logo.jpg">
 </head>
-<body class="inicioBody">
-    <div id="menu">
-        <img id="logo" src="logo.jpg">
-        <input type="button" id="inicio" class="button precionado" value="Início" name="teste">
-        <input type="button" id="pedido" class="button" value="Pedido">
-        <input type="image" id="insta" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/3840px-Instagram_logo_2016.svg.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=thumbnail">
+<body>
+    <div id="info">
+        <h1 id="nice">Nice Bolos</h1>
     </div>
-    <div class="landing">
-        <div id="info">
-            <h1 id="nice">Nice Bolos</h1>
-            <span id="desc">Lorem ipsum dolor sit amet.</span>
-        </div>
-        <p>Contato: 4002-8922</p>
+    <div id="tipo">
+        <input type="button" value="Salgados">
+        <input type="button" value="Bolos">
+        <input type="button" value="Doces">
     </div>
-    <div class="landing" id="vitrineDiv">
-            <h1 id = "ex">Galeria</h1>
-            <img class="vitrine" id="vitrinePrimeiro" src="cereja.png">
-            <img class="vitrine" src="chapeleiro.png">
-            <img class="vitrine" src="teamo.png">
-    </div>
-    <div style="display: none;" id="produtos">
-        <h1 id="pedidoH1">Faça seu pedido</h1>
-        <div class="produto" id="Bolo de chocolate">
-            <img class="thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWqw8Q-XEDWNsa3vJJUg_GnXGOKDR_lzZBz3ozMFmQoM_TtF1K0pVpqjNe_28G-S9GfQm5nZ8x9EhUfPaUr-9MH3II8aKCVLEd4-b37Q&s=10">
-            <p class="textoProduto">Bolo de Chocolate</p>
-            <p class="descProduto">Bolo chocolate com picininha de brigadeiro</p>
+    <div id="salgados" class="produtos">
+        <div id="produtoGenerico" class="produto" style="display: none">
+            <img src="">
+            <h1></h1>
+            <h2></h2>
             <div class="qtdade">
-                <input type="button" class="operacao" value="-">
-                <span class="num">0</span>
-                <input type="button" class="operacao" value="+">
+                <input type="button" value="-">
+                <input type="text">
+                <input type="button" value="+">
             </div>
         </div>
-        <div class="produto" id="Bolo de morango">
-            <img class="thumb" src="https://www.sabornamesa.com.br/media/k2/items/cache/24d767ce6c156eb07b1fc26c266211f5_XL.jpg">
-            <p class="textoProduto">Bolo de Morango</p>
-            <p class="descProduto">Bolo morango com leite em pó</p>
-            <div class="qtdade">
-                <input type="button" class="operacao" value="-">
-                <span class="num">0</span>
-                <input type="button" class="operacao" value="+">
-            </div>
-        </div>
-        <div class="produto" id="Coxinha">
-            <img class="thumb" src="https://blog.duogourmet.com.br/wp-content/uploads/2020/04/coxinha-4161592_1920-scaled-1.jpg">
-            <p class="textoProduto">Coxinha</p>
-            <p class="descProduto">Coxinha de frango com catupiry</p>
-            <div class="qtdade">
-                <input type="button" class="operacao" value="-">
-                <span class="num">0</span>
-                <input type="button" class="operacao" value="+">
-            </div>
-        </div>
-        <input type="button" class="button" id="continuar" value="Continuar">
-        <div id="fog"></div>
-        <div id="popup">
-            <h1 id="confirmacao">Confirmação do pedido</h1>
-            <input type="button" id="fechar" value="X">
-            <form id="confirmaForm">
+    </div>
+    <div id="doces" class="produtosNone"></div>
+    <div id="bolos" class="produtosNone"></div>
+
+    <input type="button" class="button" id="continuar" value="Continuar">
+    <div id="fog"></div>
+    <div id="popup">
+        <h1 id="confirmacao">Confirmação do pedido</h1>
+        <input type="button" id="fechar" value="X">
+        <form id="confirmaForm">
+            <div id="campos">
                 <label for="tel">Numero do WhatsApp</label>
                 <input type="tel" id="tel" name="telefone" placeholder="Telefone">
-                <input type="submit" class="button" id="enviar" value="Enviar">
-            </form>
-            <p id="status">Sucesso, enviamos uma mensagem no seu WhatsApp!</p>
-        </div>
+            </div>
+            <input type="submit" class="button" id="enviar" value="Enviar">
+        </form>
+        <p id="status" style="display: none">Sucesso, enviamos uma mensagem no seu WhatsApp!</p>
     </div>
 </body>
-<script src="main.js"></script>
+<script src="cardapio.js"></script>
 </html>

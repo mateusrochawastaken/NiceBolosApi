@@ -1,9 +1,11 @@
 package org.nicebolos;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.nicebolos.businesslayer.CardapioUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.JdkClientHttpRequestFactory;
@@ -17,7 +19,10 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.net.http.HttpClient;
 
 @RestController
@@ -95,5 +100,22 @@ public class ApiController {
         }
     }
 
-
+    /**
+     * Lê e retorna o conteúdo do arquivo cardapio.json, que deve ser um resource acessível pelo classloader.
+     */
+    @GetMapping("/obter-cardapio")
+    public ResponseEntity<String> obterCardapio(){
+        try {
+            String cardapio;
+            ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+            FileReader reader = new FileReader(classloader.getResource("cardapio.json").getFile());
+            cardapio = reader.readAllAsString();
+            return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON)
+                    .header("Access-Control-Allow-Origin","*").body(cardapio);
+        }catch (Exception e){
+            logger.error(e);
+            return ResponseEntity.internalServerError().contentType(MediaType.APPLICATION_JSON)
+                    .body("{\"mensagem\":\"Erro ao obter cardápio, tente mais tarde ou contate a administração do servidor\"");
+        }
+    }
 }

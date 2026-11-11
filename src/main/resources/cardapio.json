@@ -1,5 +1,44 @@
 {
-  "Bolo de chocolate": 30,
-  "Bolo de morango": 35,
-  "Coxinha": 5
+  "Cardapio":
+  {
+    "Bolos": {
+      "Bolo de chocolate": {
+        "preco": 30,
+        "thumb": "Chocolate.jpg"
+      },
+      "Bolo de morango": {
+        "preco": 35,
+        "thumb": "Morango.jpeg"
+      }
+    },
+    "Salgados": {
+      "Coxinha": {
+        "preco": 5,
+        "thumb": "Coxinha.jpg"
+      },
+      "Empada": {
+        "preco": 4,
+        "thumb": "Empada.jpeg"
+      },
+      "Bolinhas de queijo": {
+        "preco": 3,
+        "thumb": "Bolinha.jpeg"
+      },
+      "Rissole": {
+        "preco": 3,
+        "thumb": "Rissole.jpeg"
+      },
+      "Pão de Queijo": {
+        "preco": 2,
+        "thumb": "PaoDeQueijo.jpg"
+      }
+    },
+    "Doces": {
+      "Brigadeiro": {
+        "preco": 1,
+        "thumb": "Brigadeiro.jpg"
+      }
+
+    }
+  }
 }

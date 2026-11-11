@@ -1,0 +1,158 @@
+body{
+    background-color: #ebb1c3;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#info{
+    padding: 10px;
+    padding-left: 20px;
+    height: fit-content;
+    background-color: #69142f;
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#nice{
+    font-size: xxx-large;
+    margin: 0px;
+}
+
+#tipo{
+    display: flex;
+    justify-content: center;
+    gap:4vw;
+    padding: 20px;
+}
+
+#tipo > input{
+    width: 250px;
+    font-size: xx-large;
+    color: white;
+    background-color: #69142f;
+    border: none;
+    border-radius: 20px;
+}
+.produtosNone{
+    display: none;
+}
+.produtos{
+    display: flex;
+    flex-wrap: wrap;
+    gap:50px;
+    height: 70vh;
+    overflow-y: scroll;
+    scrollbar-color: #69142f #1f0a0a;
+    padding: 2%;
+}
+.produto{
+    display: grid;
+    grid-template-rows: 203px 3fr 3fr;
+    justify-items: center;
+    height: 400px;
+    width: 340px;
+    background-color: #f39f90;
+    border-radius: 15%;
+    color: white;
+}
+.produto > img{
+    grid-row:1;
+    height: 100%;
+    width: 340px;
+    border-radius: 15%;
+}
+.produto > h1{
+    text-align: center;
+    text-decoration: underline;
+    color:white;
+    margin: 0;
+    grid-row:2;
+}
+.produto > h2{
+    color: #69142f;
+    margin: 0;
+    grid-row:3;
+}
+.qtdade{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #1f0a0a;
+    width: 50%;
+    height: fit-content;
+    grid-row: 4;
+}
+.qtdade > input[type="button"]{
+    background-color: #69142f;
+    border: none;
+    border-radius: 100%;
+    color: white;
+    font-size: large;
+}
+.qtdade > input[type="text"]{
+    width: 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: large;
+}
+#enviar,#continuar{
+    width: 250px;
+    font-size: xx-large;
+    color: white;
+    background-color: #69142f;
+    border: none;
+    border-radius: 20px;
+}
+#fog{
+    display: none;
+    position: absolute;
+    top: 0px;
+    background-color: rgb(0 0 0 / 0.5);
+    height: 100vh;
+    width: 100vw;
+}
+#popup{
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    left: 25%;
+    bottom: 15%;
+    color: white;
+    background-color: #f39f90;
+    border-radius: 10%;
+    padding: 5%;
+    height: 70vh;
+    width: 50vw;
+}
+#confirmaForm{
+    height: 80%;
+}
+#campos > label{
+    font-size: xx-large;
+}
+#campos{
+    height: 80%;
+}
+#fechar{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    background-color: red;
+    color: white;
+    border-style: none;
+    border-radius: 40%;
+}
+#tel{
+    color: white;
+    background-color: #69142f;
+    font-size: 3vw;
+    width: 100%;
+}
+#confirmacao{
+    font-size: xxx-large;
+    color: white;
+}
